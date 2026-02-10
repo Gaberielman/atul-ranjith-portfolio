@@ -1,0 +1,623 @@
+/* ATUL RANJITH | STUDIO PORTFOLIO 
+    Consolidated style.css
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@300;400;700;900&family=Space+Grotesk:wght@300;700&display=swap');
+
+:root {
+    --neon-blue: #00d2ff;
+    --neon-green: #00ff88;
+    --brand-blue: #2563eb;
+    --deep-space: #050505;
+    --glass-white: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* 1. Global Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--deep-space);
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* 2. Interactive Mesh Background */
+.mesh-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 10% 10%, rgba(0, 210, 255, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(0, 255, 136, 0.08) 0%, transparent 40%);
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+/* 3. High-End Typography */
+.futuristic-title {
+    font-family: 'Syncopate', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -5px;
+    font-weight: 700;
+}
+
+h2,
+h3,
+h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+}
+
+.text-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    color: transparent;
+}
+
+/* 4. Glassmorphism & Bento Layout */
+.glass-panel {
+    background: var(--glass-white);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 2rem;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+    border-color: var(--neon-blue);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-5px);
+}
+
+/* 5. Scroll Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}
+
+/* 6. Navigation Mix-Blend */
+nav {
+    mix-blend-mode: difference;
+    z-index: 100;
+}
+
+nav a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--brand-blue);
+    transition: width 0.4s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* 7. Special Effects */
+.bg-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+/* 3D Card Effect */
+.card-3d {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    perspective: 1000px;
+}
+
+/* Utilities */
+.selection-blue::selection {
+    background: var(--brand-blue);
+    color: white;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--deep-space);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-blue);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@300;700&display=swap');
+
+:root {
+    --brand-blue: #2563eb;
+    --neon-blue: #00d2ff;
+    --deep-bg: #050505;
+    --glass-white: rgba(255, 255, 255, 0.03);
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--deep-bg);
+    overflow-x: hidden;
+}
+
+.futuristic-title {
+    font-family: 'Syncopate', sans-serif;
+    letter-spacing: -0.05em;
+    font-weight: 700;
+}
+
+.text-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+    color: transparent;
+}
+
+/* Moving Mesh Background */
+.mesh-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+    filter: blur(100px);
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--brand-blue);
+    transform: translateY(-5px);
+}
+
+/* Animations from assets/js/animations.js */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+/* style.css optimization */
+
+/* 1. Fast Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Reduced from 40px for faster perceived movement */
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Faster duration */
+    will-change: transform, opacity;
+    /* Hardware acceleration */
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 2. Snappy Glass Panel Hover */
+.glass-panel {
+    transition:
+        transform 0.3s cubic-bezier(0.33, 1, 0.68, 1),
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.glass-panel:hover {
+    transform: scale(1.02) translateY(-5px);
+    /* Instant feedback */
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* 3. Performance Fix for Mesh Background */
+.mesh-bg {
+    /* Use 'transform' instead of positioning for smoother framerate */
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Update your font stack for speed */
+body {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+    /* Add this for speed */
+}
+
+/* Add this to your style.css if the image feels too large */
+header .absolute img {
+    max-height: 85vh;
+    width: auto;
+    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.5));
+    /* Adds depth against the text */
+}
+
+/* Ensure the portrait scales nicely on small screens */
+@media (max-width: 768px) {
+    header .absolute img {
+        max-height: 70vh;
+        /* Shorter on mobile to show more of the 'ATUL' text */
+        bottom: 0;
+    }
+}
+
+/* --- Responsive Hero Text & Image Adjustments --- */
+
+/* --- High-End Responsive Hero CSS --- */
+
+/* Base style for the big background name */
+.futuristic-title-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 0.8;
+    font-family: 'Syncopate', sans-serif;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/* Mobile-Specific Adjustments (Phones) */
+@media (max-width: 768px) {
+
+    /* Scale the background name to fit width without horizontal scroll */
+    .futuristic-title-stack {
+        font-size: 20vw !important;
+        transform: translateY(-5%);
+        /* Lift it slightly to clear the bottom nav */
+    }
+
+    /* Adjust the Portrait Image so it doesn't cover the top text */
+    header .absolute img {
+        height: 65vh !important;
+        /* Shorter on mobile to keep "ATUL" visible */
+        width: auto;
+        object-fit: contain;
+        bottom: 0;
+    }
+
+    /* Stack the side content (Title & Bio) vertically and center it */
+    header .relative.z-20 {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+        padding-top: 2rem;
+        gap: 2rem;
+    }
+
+    /* Make the Hero Title readable on small screens */
+    header h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.1;
+    }
+}
+
+/* Tablet & Desktop Adjustments */
+@media (min-width: 769px) {
+    .futuristic-title-stack {
+        font-size: 14vw;
+        transform: translateY(10%);
+    }
+}
+
+/* The Hollow Text Effect for "RANJITH" */
+.text-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    color: transparent;
+}
+
+/* 4. Fix for 'Outline' text thickness on mobile */
+.text-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+    /* Improves readability on high-DPI mobile screens */
+    paint-order: stroke fill;
+}
+
+/* Custom Background Layers with fixed parallax */
+.bg-aviation {
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.95), rgba(5, 5, 5, 0.85)),
+        url('https://images.unsplash.com/photo-1559101341-389f76332675?auto=format&fit=crop&q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Creates that premium depth */
+}
+
+.bg-cricket {
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.95)),
+        url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Subtle scanline overlay to keep the tech-studio vibe */
+.bg-scanlines {
+    position: relative;
+}
+
+.bg-scanlines::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* --- Background Image Sections (Aviation & Cricket) --- */
+
+.bg-aviation {
+    /* Subtle dark overlay + Aviation Image */
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.95), rgba(5, 5, 5, 0.85)),
+        url('https://images.unsplash.com/photo-1559101341-389f76332675?auto=format&fit=crop&q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Parallax Effect */
+}
+
+.bg-cricket {
+    /* Subtle dark overlay + Cricket Stadium Image */
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.95)),
+        url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Parallax Effect */
+}
+
+/* Studio Scanline Overlay (Visual Texture) */
+.bg-scanlines {
+    position: relative;
+}
+
+.bg-scanlines::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/* Glass Panel Enhancements for the Grid */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.glass-panel:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* CTA Group Animation */
+.group:hover .text-outline {
+    -webkit-text-stroke: 1px var(--brand-blue);
+}
+
+/* Subtle pulse for the social icons so they aren't ignored */
+@keyframes softPulse {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+.text-white\/30 {
+    animation: softPulse 4s infinite ease-in-out;
+}
+
+.text-white\/30:hover {
+    animation: none;
+    opacity: 1;
+}
+
+/* --- Add/Update these in your style.css --- */
+:root {
+    --brand-blue: #3b82f6;
+    /* Softer Blue */
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    /* Prevents headers from being hidden under nav */
+}
+
+/* Fluid Typography - Scales automatically */
+h1 {
+    font-size: clamp(2.5rem, 8vw, 8rem);
+}
+
+.futuristic-title-stack {
+    font-size: clamp(5rem, 15vw, 18vw);
+}
+
+/* Softer Glass Panels */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Hero Section Responsiveness */
+header {
+    min-height: 100vh;
+    height: auto;
+    padding: 120px 0 60px 0;
+    /* Ensures nothing cuts at top/bottom */
+}
+
+/* Mobile Specific Tweaks */
+@media (max-width: 768px) {
+    header {
+        min-height: 90vh;
+    }
+
+    .futuristic-title-stack {
+        transform: translateY(-10%);
+    }
+
+    header img {
+        height: 50vh !important;
+        /* Prevents portrait from swallowing the screen */
+        margin-top: -20px;
+    }
+}
+
+/* --- WhatsApp Floating Button --- */
+.whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+    /* Soft Emerald Glow */
+}
+
+/* On Mobile, make it slightly smaller so it doesn't take much room */
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* --- Footer Contact Polish --- */
+#contact a {
+    position: relative;
+    display: inline-block;
+}
+
+/* Subtle underline effect on hover */
+#contact a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--brand-blue);
+    transition: width 0.4s ease;
+}
+
+#contact a:hover::after {
+    width: 100%;
+}
+
+/* Mobile fix to ensure the Big Name doesn't overlap text readability */
+@media (max-width: 768px) {
+    #contact .futuristic-title {
+        opacity: 0.05;
+        /* Fainter on mobile for better contrast */
+    }
+}
