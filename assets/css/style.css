@@ -621,3 +621,73 @@ header {
         /* Fainter on mobile for better contrast */
     }
 }
+
+/* --- Hero Flex Logic --- */
+
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes Tier 1 to top, Tier 3 to bottom */
+}
+
+/* Make sure the portrait stays within its bounds */
+header img {
+    max-height: 65vh; 
+    width: auto;
+    object-fit: contain;
+}
+
+/* Background name should be faint so it doesn't distract from the face */
+.futuristic-title-stack {
+    font-size: 18vw;
+    line-height: 0.85;
+    z-index: 0;
+}
+
+/* Mobile Polish */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3.2rem !important;
+    }
+    
+    header img {
+        max-height: 40vh; /* Shorter image on mobile to keep the Vision button visible */
+    }
+
+    .futuristic-title-stack {
+        font-size: 22vw !important;
+        opacity: 0.03; /* Barely visible on small screens to keep it clean */
+    }
+}
+
+/* --- Status Indicator Styles --- */
+
+.animate-ping {
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+    75%, 100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Ensure the bio box has that 'Soft' feel */
+header .glass-panel {
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Mobile check: Reduce padding for small screens */
+@media (max-width: 768px) {
+    header .glass-panel {
+        padding: 1.5rem 1rem;
+        margin: 0 0.5rem;
+    }
+    header .text-base {
+        font-size: 0.95rem;
+    }
+}
